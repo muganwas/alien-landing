@@ -13,10 +13,10 @@
 */
 
 // smooth scroll
-$(document).ready(function(){
-	$(".nav-link").on('click', function(event) {
+$(document).ready(function () {
+	$(".nav-link").on('click', function (event) {
 
-    	if (this.hash !== "") {
+		if (this.hash !== "") {
 
 			event.preventDefault();
 
@@ -24,9 +24,13 @@ $(document).ready(function(){
 
 			$('html, body').animate({
 				scrollTop: $(hash).offset().top
-			}, 700, function(){
+			}, 700, function () {
 				window.location.hash = hash;
 			});
-      	} 
-    });
+		}
+	});
+	$("#contact-form").on("submit", function (e) {
+		e.preventDefault();
+		console.log("contact form submitted")
+	})
 });
